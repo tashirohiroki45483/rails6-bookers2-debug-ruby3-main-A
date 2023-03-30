@@ -1,11 +1,11 @@
 <div class="left-button">
   <%= link_to "ユーザー一覧に戻る", "/users",class:"edit-link" %>
 </div>
-<h4 class="rooms-title">気になる同士</h4>
+<h4 class="rooms-title">さんとのチャット</h4>
 <% @entries.each do |e| %>
   <div class="user-name">
   <strong>
-    <%= image_tag e.user.get_profile_image, size:'100x100', class:"user-image" %>
+    <%= image_tag e.user.get_profile_image, size:'75x75', class:"user-image" %>
       <a class="rooms-user-link" href="/users/<%= e.user.id %>">
         <%= e.user.name %>さん
       </a>
@@ -19,9 +19,10 @@
       <% @messages.each do |m| %>
         <div class="chat-box">
           <div class="chat-face">
-            <%= image_tag m.user.get_profile_image, size:'100x100', class:"user-image" %>
+            <%= image_tag m.user.get_profile_image, size:'75x75', class:"user-image" %>
+            <%= m.message %>
           </div>
-          <div class="chat-hukidashi"> <strong><%= m.message %></strong> <br>
+          <div class="chat-hukidashi">
             <%= m.created_at.strftime("%Y-%m-%d %H:%M")%>
           </div>
         </div>

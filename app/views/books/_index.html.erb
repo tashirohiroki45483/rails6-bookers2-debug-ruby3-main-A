@@ -23,7 +23,10 @@
         </div>
         </td>
         <td>
-          <p>コメント件数：<%= book.book_comments.count %></p>
+          <p>コメント数：<%= book.book_comments.count %></p>
+        </td>
+        <td>
+          <p class="view-count">閲覧数: <%= book.view_counts.count %></p>
         </td>
       </tr>
     <% end %>
